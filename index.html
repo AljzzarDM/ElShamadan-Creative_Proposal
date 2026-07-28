@@ -483,6 +483,93 @@ section{padding:96px 0;position:relative}
   section{break-inside:avoid;padding:50px 0}
   .reveal{opacity:1!important;transform:none!important}
 }
+.hero-brand-mark{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:22px;
+}
+
+.hero-brand-ring{
+  position:relative;
+  width:132px;
+  height:132px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:1px solid rgba(234,216,171,.32);
+  box-shadow:
+    0 0 10px rgba(201,164,93,.08),
+    0 0 22px rgba(87,235,162,.035);
+  animation:
+    brandRingFloat 7s ease-in-out infinite,
+    brandRingGlow 6s ease-in-out infinite;
+}
+
+.hero-brand-ring::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:50%;
+  padding:1px;
+  background:conic-gradient(
+    from 0deg,
+    transparent 0deg 230deg,
+    rgba(87,235,162,.72) 255deg,
+    rgba(234,216,171,.82) 285deg,
+    transparent 320deg 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:.42;
+  animation:brandRingOrbit 12s linear infinite;
+}
+
+.hero-brand-ring::after{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+.hero-brand-ring img{
+  width:72px;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  filter:
+    drop-shadow(0 0 4px rgba(255,215,0,.08))
+    drop-shadow(0 0 8px rgba(0,0,0,.18));
+}
+
+@keyframes brandRingOrbit{
+  to{transform:rotate(360deg);}
+}
+
+@keyframes brandRingFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-2px);}
+}
+
+@keyframes brandRingGlow{
+  0%,100%{
+    box-shadow:
+      0 0 8px rgba(201,164,93,.055),
+      0 0 18px rgba(87,235,162,.02);
+  }
+  50%{
+    box-shadow:
+      0 0 13px rgba(201,164,93,.11),
+      0 0 26px rgba(87,235,162,.045);
+  }
+}
 </style>
 </head>
 <body>
@@ -490,7 +577,13 @@ section{padding:96px 0;position:relative}
 
 <header class="hero">
   <div class="container hero-inner reveal">
-    <div class="kicker en">MONTHLY CREATIVE & CONTENT PRODUCTION PROPOSAL</div>
+    <div class="hero-brand-mark">
+  <div class="hero-brand-ring">
+    <img src="elshamadan-logo.png" alt="ElShamadan Logo">
+  </div>
+</div>
+
+<div class="kicker en">MONTHLY CREATIVE & CONTENT PRODUCTION PROPOSAL</div>
     <h1 class="en">ElShamadan Football Season - EPL & CL</h1>
     <h2>عرض إنتاج وإدارة المحتوى الشهري لحملة الشمعدان الكروية الممتدة من بداية الموسم حتى نهايته.</h2>
     <p>نظام عمل متكامل يجمع بين التوجيه الإبداعي، التخطيط، الكتابة، التصميم، إنتاج الفيديو، والمحتوى التفاعلي؛ بهدف الحفاظ على حضور قوي ومتجدد طوال الموسم.</p>
