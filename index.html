@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ElShamadan Football Season — Monthly Creative & Content Production Proposal</title>
+<meta name="description" content="عرض إنتاج وإدارة المحتوى الشهري لحملة الشمعدان الكروية الممتدة." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090b;
+  --bg2:#0d1013;
+  --panel:#14171b;
+  --panel2:#191d22;
+  --line:rgba(255,255,255,.085);
+  --text:#f5f0e6;
+  --muted:#a8a49c;
+  --gold:#c9a45d;
+  --gold2:#ead8ab;
+  --green:#57eba2;
+  --green2:#1d8c60;
+  --amber:#d79a4d;
+  --shadow:0 30px 90px rgba(0,0,0,.38);
+  --radius:24px;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  font-family:'Cairo',sans-serif;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(87,235,162,.08), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(201,164,93,.12), transparent 32%),
+    linear-gradient(180deg,var(--bg),var(--bg2) 48%,var(--bg));
+  color:var(--text);
+  line-height:1.85;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none; z-index:100;
+  opacity:.045; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+a{color:inherit;text-decoration:none}
+.en{font-family:'Sora',sans-serif;direction:ltr;unicode-bidi:isolate}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.hero{
+  min-height:100svh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding:96px 0 70px;
+  isolation:isolate;
+}
+.hero::before{
+  content:"";position:absolute;inset:-20%;z-index:-3;
+  background:
+    radial-gradient(ellipse at 70% 28%,rgba(201,164,93,.24),transparent 38%),
+    radial-gradient(ellipse at 18% 68%,rgba(87,235,162,.15),transparent 36%),
+    linear-gradient(135deg,#060709,#0b0e12 44%,#0b100d 74%,#060709);
+  animation:breath 10s ease-in-out infinite;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at center,#000 0,#000 55%,transparent 92%);
+}
+.light-sweep{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+}
+.light-sweep::before{
+  content:"";position:absolute;top:-20%;bottom:-20%;width:18%;
+  left:-30%;transform:skewX(-17deg);
+  background:linear-gradient(90deg,transparent,rgba(234,216,171,.12),transparent);
+  filter:blur(10px);
+  animation:sweep 8s ease-in-out infinite;
+}
+.hero-inner{text-align:center;max-width:920px;margin:auto}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  color:rgba(234,216,171,.72);font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;margin-bottom:22px;
+}
+.kicker::before{
+  content:"";width:8px;height:8px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 10px var(--green),0 0 30px rgba(87,235,162,.5);
+  animation:pulse 2.2s ease-in-out infinite;
+}
+.hero h1{
+  font-size:clamp(2.6rem,7vw,5.6rem);
+  line-height:1.02;letter-spacing:-.05em;font-weight:800;
+  background:linear-gradient(100deg,var(--text),var(--gold2) 46%,var(--gold) 72%,var(--text));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 48px rgba(201,164,93,.08);
+}
+.hero h2{
+  margin:24px auto 0;
+  font-size:clamp(1.25rem,3vw,2rem);
+  max-width:780px;line-height:1.65;font-weight:800;
+}
+.hero p{
+  max-width:760px;margin:18px auto 0;color:rgba(245,240,230,.58);
+  font-size:1rem;
+}
+.hero-meta{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px
+}
+.pill{
+  font-family:'Sora',sans-serif;font-size:11px;letter-spacing:.08em;
+  padding:9px 14px;border-radius:999px;border:1px solid var(--line);
+  color:rgba(245,240,230,.66);background:rgba(255,255,255,.025);
+  backdrop-filter:blur(10px);
+}
+.scroll{
+  position:absolute;bottom:25px;left:50%;transform:translateX(-50%);
+  font-family:'Sora',sans-serif;font-size:10px;letter-spacing:.16em;color:rgba(234,216,171,.5)
+}
+.scroll::after{
+  content:"↓";display:block;color:var(--green);font-size:18px;margin-top:5px;
+  animation:float 2s ease-in-out infinite
+}
+section{padding:96px 0;position:relative}
+.section-head{margin-bottom:34px}
+.eyebrow{
+  font-family:'Sora',sans-serif;color:var(--green);font-size:11px;
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;direction:ltr;text-align:left
+}
+.section-head h3{
+  font-size:clamp(1.7rem,3.5vw,2.55rem);line-height:1.4;font-weight:800;
+  background:linear-gradient(100deg,var(--text),var(--gold2) 52%,var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.section-head p{color:var(--muted);max-width:780px;margin-top:12px}
+.grid{display:grid;gap:16px}
+.services{grid-template-columns:repeat(3,1fr)}
+.card{
+  position:relative;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012)),
+    radial-gradient(ellipse at 0 0,rgba(87,235,162,.06),transparent 64%),
+    var(--panel);
+  border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  box-shadow:0 18px 54px rgba(0,0,0,.2);
+  transition:.3s ease;
+}
+.card::after{
+  content:"";position:absolute;inset:-1px;pointer-events:none;opacity:0;
+  background:linear-gradient(120deg,transparent 35%,rgba(87,235,162,.12) 48%,rgba(234,216,171,.13) 52%,transparent 65%);
+  transform:translateX(-40%);transition:.3s;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(201,164,93,.28);box-shadow:var(--shadow)}
+.card:hover::after{opacity:.7;animation:cardSweep 3s ease-in-out}
+.card .num{
+  font-family:'Sora',sans-serif;font-size:10px;letter-spacing:.16em;
+  color:rgba(245,240,230,.35);direction:ltr;text-align:left
+}
+.card h4{
+  font-family:'Sora',sans-serif;direction:ltr;text-align:left;
+  color:var(--gold2);font-size:1rem;margin:20px 0 12px;line-height:1.45
+}
+.card p{color:rgba(245,240,230,.58);font-size:.92rem}
+.output-wrap{
+  border:1px solid var(--line);border-radius:30px;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 10% 20%,rgba(87,235,162,.08),transparent 42%),
+    radial-gradient(ellipse at 90% 10%,rgba(201,164,93,.12),transparent 45%),
+    rgba(14,16,20,.74);
+  box-shadow:var(--shadow)
+}
+.console-head{
+  direction:ltr;display:flex;align-items:center;gap:8px;padding:16px 20px;
+  border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)
+}
+.console-head i{width:11px;height:11px;border-radius:50%;display:block}
+.console-head i:nth-child(1){background:#ff5f57}
+.console-head i:nth-child(2){background:#febc2e}
+.console-head i:nth-child(3){background:#28c840}
+.console-head span{margin-left:auto;font-family:'Sora',sans-serif;font-size:10px;letter-spacing:.14em;color:rgba(245,240,230,.45)}
+.output-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px}
+.output-card{
+  min-height:310px;padding:26px;border-radius:22px;border:1px solid var(--line);
+  background:rgba(20,23,27,.8);display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden
+}
+.output-card::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:28px 28px;opacity:.3
+}
+.output-card>*{position:relative;z-index:2}
+.output-label{font-family:'Sora',sans-serif;color:rgba(245,240,230,.46);font-size:11px;letter-spacing:.16em;text-align:left;direction:ltr}
+.output-number{
+  font-family:'Sora',sans-serif;font-size:clamp(4.7rem,10vw,7.5rem);
+  font-weight:800;line-height:1;color:var(--gold2);direction:ltr;text-align:left;
+  text-shadow:0 0 30px rgba(201,164,93,.13)
+}
+.output-card.video .output-number{color:var(--green)}
+.output-title{font-weight:800;font-size:1.35rem;margin-bottom:8px}
+.output-copy{color:var(--muted);font-size:.92rem}
+.weekly-strip{
+  margin:0 24px 24px;padding:20px;border:1px solid rgba(87,235,162,.16);
+  border-radius:18px;background:rgba(87,235,162,.035);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px
+}
+.week{
+  padding:14px;border-radius:14px;background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.06);text-align:center
+}
+.week strong{display:block;font-family:'Sora',sans-serif;color:var(--green);font-size:.76rem;direction:ltr}
+.week span{font-size:.86rem;color:rgba(245,240,230,.64)}
+.note{margin:0 24px 24px;color:rgba(245,240,230,.48);font-size:.86rem}
+.price-shell{
+  max-width:780px;margin:auto;position:relative;overflow:hidden;
+  border:1px solid rgba(201,164,93,.28);border-radius:30px;padding:38px;
+  background:
+    linear-gradient(180deg,rgba(201,164,93,.09),rgba(255,255,255,.012) 44%),
+    radial-gradient(ellipse at 50% 0,rgba(201,164,93,.14),transparent 70%),
+    rgba(17,19,23,.9);
+  box-shadow:0 40px 110px rgba(0,0,0,.45),0 0 50px rgba(201,164,93,.08)
+}
+.price-shell::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:32px 32px;opacity:.3
+}
+.price-shell>*{position:relative;z-index:2}
+.price-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.price-name h4{font-family:'Sora',sans-serif;direction:ltr;text-align:left;font-size:1.1rem;color:var(--gold2)}
+.price-name p{color:var(--muted);font-size:.9rem;margin-top:8px}
+.badge{
+  font-family:'Sora',sans-serif;font-size:10px;letter-spacing:.12em;padding:7px 12px;border-radius:999px;
+  color:#07120d;background:linear-gradient(135deg,var(--green),#a7ffd1);font-weight:800;direction:ltr
+}
+.price{
+  font-family:'Sora',sans-serif;direction:ltr;text-align:left;margin:34px 0 24px
+}
+.price .amount{font-size:clamp(3.8rem,9vw,6.8rem);font-weight:800;line-height:1;color:var(--gold2)}
+.price .per{font-size:.78rem;letter-spacing:.12em;color:rgba(245,240,230,.44);margin-left:10px}
+.price-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);margin:24px 0}
+.price-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px}
+.price-list li{color:rgba(245,240,230,.62);font-size:.9rem;position:relative;padding-right:20px}
+.price-list li::before{content:"";position:absolute;right:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(87,235,162,.6)}
+.exclusions{
+  margin-top:34px;padding:24px;border-radius:20px;border:1px solid rgba(215,154,77,.18);
+  background:rgba(215,154,77,.035)
+}
+.exclusions h5{color:var(--gold2);font-size:1rem;margin-bottom:10px}
+.exclusions p{color:rgba(245,240,230,.56);font-size:.9rem}
+.footer{
+  padding:70px 0 48px;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.015))
+}
+.footer-wrap{display:flex;justify-content:space-between;align-items:end;gap:22px}
+.footer h5{font-family:'Sora',sans-serif;direction:ltr;text-align:left;color:var(--gold2);font-size:1rem}
+.footer p{color:rgba(245,240,230,.42);font-size:.86rem;margin-top:8px}
+.print-btn{
+  position:fixed;left:22px;bottom:22px;z-index:120;
+  border:1px solid rgba(87,235,162,.25);background:rgba(12,15,18,.78);
+  color:var(--green);border-radius:999px;padding:11px 16px;font-family:'Sora',sans-serif;
+  font-size:11px;letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(12px);
+  box-shadow:0 10px 35px rgba(0,0,0,.3);transition:.25s
+}
+.print-btn:hover{transform:translateY(-2px);background:rgba(87,235,162,.08)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@keyframes breath{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes sweep{0%,68%,100%{left:-30%;opacity:0}78%{opacity:1}92%{left:115%;opacity:0}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.35);opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(5px);opacity:1}}
+@keyframes cardSweep{0%{transform:translateX(-45%);opacity:0}40%{opacity:.65}100%{transform:translateX(45%);opacity:0}}
+@media(max-width:900px){
+  .services{grid-template-columns:1fr 1fr}
+  .price-list{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .container{width:min(100% - 28px,var(--max))}
+  .hero{padding:84px 0 66px}
+  section{padding:72px 0}
+  .services,.output-grid{grid-template-columns:1fr}
+  .weekly-strip{grid-template-columns:1fr 1fr}
+  .price-shell{padding:28px 22px}
+  .price-top,.footer-wrap{flex-direction:column;align-items:flex-start}
+  .print-btn{left:14px;bottom:14px}
+}
+@media print{
+  *{animation:none!important;transition:none!important}
+  body{background:#08090b!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .print-btn,.scroll{display:none!important}
+  .hero{min-height:auto;padding:70px 0}
+  section{break-inside:avoid;padding:50px 0}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+<div class="light-sweep"></div>
+
+<header class="hero">
+  <div class="container hero-inner reveal">
+    <div class="kicker en">MONTHLY CREATIVE & CONTENT PRODUCTION PROPOSAL</div>
+    <h1 class="en">ElShamadan Football Season</h1>
+    <h2>عرض إنتاج وإدارة المحتوى الشهري لحملة الشمعدان الكروية الممتدة من بداية الموسم حتى نهايته.</h2>
+    <p>نظام عمل متكامل يجمع بين التوجيه الإبداعي، التخطيط، الكتابة، التصميم، إنتاج الفيديو، والمحتوى التفاعلي؛ بهدف الحفاظ على حضور قوي ومتجدد طوال الموسم.</p>
+    <div class="hero-meta">
+      <span class="pill en">CREATIVE DIRECTION</span>
+      <span class="pill en">CONTENT PRODUCTION</span>
+      <span class="pill en">AI-ASSISTED VIDEO</span>
+      <span class="pill en">MONTHLY RETAINER</span>
+    </div>
+  </div>
+  <div class="scroll en">EXPLORE</div>
+</header>
+
+<main>
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">SCOPE OF SERVICES</div>
+      <h3>خدمات متكاملة تحت إدارة إبداعية واحدة</h3>
+      <p>الهدف ليس إنتاج قطع محتوى منفصلة، بل إدارة منظومة شهرية تحافظ على اتساق الحملة، سرعة التنفيذ، وجودة المخرجات على مدار الموسم.</p>
+    </div>
+
+    <div class="grid services">
+      <article class="card reveal">
+        <div class="num">01 / STRATEGY</div>
+        <h4>Campaign Strategy & Creative Direction</h4>
+        <p>تطوير التوجه الإبداعي العام للحملة، الـInsight، الـTagline، المنصات الإبداعية، وأسس الاتساق بين كل المخرجات الشهرية.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">02 / COPY</div>
+        <h4>Arabic Copywriting</h4>
+        <p>كتابة وصياغة الـTOV، الكابشنات، الهوكس، النصوص المختصرة، والـCTAs باللهجة المصرية بما يتوافق مع طبيعة الجمهور.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">03 / DESIGN</div>
+        <h4>Graphic Design</h4>
+        <p>تصميم البوستات، الكاروسيل، القوالب المتكررة، محتوى الجولات، والمواد البصرية المطلوبة للنشر الشهري.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">04 / AI VIDEO</div>
+        <h4>AI Visual Scenes & Editing</h4>
+        <p>إنتاج مشاهد بصرية بالذكاء الاصطناعي عند الحاجة، ثم تركيبها ومونتاجها ومعالجتها بما يخدم الفكرة ويحافظ على الجودة.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">05 / REELS</div>
+        <h4>Reels Production</h4>
+        <p>إنتاج فيديوهات ريلز مكتملة تشمل الفكرة، السكربت، التوجيه البصري، المونتاج، النصوص على الشاشة، والموسيقى المناسبة.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">06 / PLANNING</div>
+        <h4>Monthly Content Planning</h4>
+        <p>إعداد خطة شهرية توزع المحتوى وفق مواعيد الجولات، المباريات المهمة، الأولويات الإعلانية، واحتياجات المنصة.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">07 / REACTIVE</div>
+        <h4>Reactive Content Management</h4>
+        <p>إدارة المحتوى المرتبط بالأحداث والنتائج والمستجدات ضمن حجم الإنتاج المعتمد، مع الحفاظ على سرعة الاستجابة والتون.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">08 / GOVERNANCE</div>
+        <h4>Creative Review & Quality Control</h4>
+        <p>مراجعة المخرجات قبل التسليم لضمان صحة اللغة، جودة التنفيذ، اتساق الهوية، وقابلية المحتوى للنشر.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">09 / MEETING</div>
+        <h4>Monthly Strategy Meeting</h4>
+        <p>اجتماع شهري لمراجعة الأداء، مناقشة أولويات الشهر التالي، وتثبيت اتجاهات التنفيذ قبل بدء الإنتاج.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">MONTHLY PRODUCTION OUTPUT</div>
+      <h3>حجم إنتاج واضح وقابل للقياس</h3>
+      <p>يتم توزيع الإنتاج على دورة شهرية مكونة من أربعة أسابيع، مع مرونة في إعادة توزيع النشر طبقًا لجدول المباريات والاحتياجات الفعلية للحملة.</p>
+    </div>
+
+    <div class="output-wrap reveal">
+      <div class="console-head">
+        <i></i><i></i><i></i>
+        <span>MONTHLY OUTPUT SYSTEM</span>
+      </div>
+
+      <div class="output-grid">
+        <div class="output-card">
+          <div>
+            <div class="output-label">MONTHLY SOCIAL POSTS</div>
+            <div class="output-number">20</div>
+          </div>
+          <div>
+            <div class="output-title">بوست شهريًا</div>
+            <div class="output-copy">تصميمات ثابتة، كاروسيل، بوستات تفاعلية، محتوى الجولات، وأي قوالب تحريرية معتمدة داخل الخطة الشهرية.</div>
+          </div>
+        </div>
+
+        <div class="output-card video">
+          <div>
+            <div class="output-label">MONTHLY REELS</div>
+            <div class="output-number">4</div>
+          </div>
+          <div>
+            <div class="output-title">فيديوهات ريلز شهريًا</div>
+            <div class="output-copy">مدة كل فيديو حتى 60 ثانية، وتشمل الكتابة، التوجيه البصري، مشاهد الذكاء الاصطناعي عند الحاجة، والمونتاج النهائي.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weekly-strip">
+        <div class="week"><strong>WEEK 01</strong><span>5 بوستات + 1 ريل</span></div>
+        <div class="week"><strong>WEEK 02</strong><span>5 بوستات + 1 ريل</span></div>
+        <div class="week"><strong>WEEK 03</strong><span>5 بوستات + 1 ريل</span></div>
+        <div class="week"><strong>WEEK 04</strong><span>5 بوستات + 1 ريل</span></div>
+      </div>
+
+      <p class="note">ملاحظة: التوزيع الأسبوعي إرشادي، ويجوز إعادة توزيعه داخل الشهر وفق كثافة الجولات، المباريات الكبرى، وجدول دوري الأبطال، من دون تجاوز الإجمالي الشهري المتفق عليه.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">MONTHLY INVESTMENT</div>
+      <h3>استثمار شهري يغطي المنظومة كاملة</h3>
+      <p>القيمة تشمل الإدارة الإبداعية والتخطيط والكتابة والتصميم والإنتاج والمراجعة ضمن نطاق العمل الشهري الموضح.</p>
+    </div>
+
+    <div class="price-shell reveal">
+      <div class="price-top">
+        <div class="price-name">
+          <h4>CORE MONTHLY CREATIVE RETAINER</h4>
+          <p>حزمة إنتاج وإدارة محتوى شهرية لحملة الشمعدان الكروية.</p>
+        </div>
+        <div class="badge">RECOMMENDED</div>
+      </div>
+
+      <div class="price">
+        <span class="amount">$3,000</span>
+        <span class="per">USD / MONTH</span>
+      </div>
+
+      <div class="price-divider"></div>
+
+      <ul class="price-list">
+        <li>Campaign Strategy & Creative Direction</li>
+        <li>20 Social Media Posts</li>
+        <li>4 Reels — up to 60 seconds each</li>
+        <li>Arabic Copywriting</li>
+        <li>Graphic Design</li>
+        <li>AI-assisted Visual Production</li>
+        <li>Video Editing & Post-production</li>
+        <li>Monthly Content Planning</li>
+        <li>Reactive Content Management</li>
+        <li>Monthly Strategy Meeting</li>
+        <li>Creative Review & Quality Control</li>
+        <li>Monthly Production Coordination</li>
+      </ul>
+
+      <div class="exclusions">
+        <h5>بنود غير مشمولة في التكلفة الشهرية</h5>
+        <p>ميزانية الإعلانات المدفوعة، تكاليف الإنفلونسرز وصناع المحتوى، الجوائز، شراء أو ترخيص المواد والصور والموسيقى المدفوعة، التصوير الخارجي أو الاستوديو، الممثلون والمذيعون، الإنتاج الميداني، السفر، تطوير المنصة تقنيًا، وأي خدمات أو إنتاجات خارج نطاق البنود الموضحة أعلاه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-wrap">
+    <div>
+      <h5>ElShamadan Football Season</h5>
+      <p>Monthly Creative & Content Production Proposal</p>
+    </div>
+    <div>
+      <p>Strategic working offer — final scope is confirmed upon approval and contract signing.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="print-btn" onclick="window.print()">PRINT / SAVE PDF</button>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting) entry.target.classList.add('in');
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
