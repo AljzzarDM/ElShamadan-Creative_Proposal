@@ -304,13 +304,24 @@ section{padding:96px 0;position:relative}
 .cinematic-btn::after{content:"";position:absolute;top:0;bottom:0;width:34%;left:-45%;background:linear-gradient(90deg,transparent,rgba(234,216,171,.20),transparent);transform:skewX(-18deg)}
 .cinematic-btn:hover{color:var(--gold2);border-color:rgba(201,164,93,.35);transform:translateY(-2px);box-shadow:0 16px 38px rgba(0,0,0,.28),0 0 28px rgba(201,164,93,.11)}
 .cinematic-btn:hover::after{animation:buttonGlint 1.2s ease forwards}
-.brand-logo-wrap{margin-top:26px;display:flex;justify-content:center;align-items:center}
+.brand-logo-wrap{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:54px;
+}
 .brand-logo{
-  width:min(250px,66vw);
+  width:min(205px,54vw);
   height:auto;
-  opacity:.84;
-  filter:drop-shadow(0 0 8px rgba(201,164,93,.045));
-  animation:logoFloat 8s ease-in-out infinite;
+  opacity:.82;
+  filter:
+    drop-shadow(0 0 5px rgba(201,164,93,.05))
+    drop-shadow(0 0 10px rgba(87,235,162,.025));
+  animation:
+    logoFloatMicro 7.5s ease-in-out infinite,
+    logoGlowMicro 6.5s ease-in-out infinite;
+  will-change:transform,filter,opacity;
 }
 .services .card{direction:ltr;text-align:left}
 .services .card p{direction:rtl;text-align:right}
@@ -343,6 +354,24 @@ section{padding:96px 0;position:relative}
 }
 .weekly-strip{direction:ltr}
 .week{direction:ltr;text-align:center}
+
+@keyframes logoFloatMicro{
+  0%,100%{transform:translateY(0) scale(1);opacity:.80}
+  50%{transform:translateY(-1.5px) scale(1.006);opacity:.86}
+}
+@keyframes logoGlowMicro{
+  0%,100%{
+    filter:
+      drop-shadow(0 0 4px rgba(201,164,93,.035))
+      drop-shadow(0 0 8px rgba(87,235,162,.018));
+  }
+  50%{
+    filter:
+      drop-shadow(0 0 7px rgba(201,164,93,.085))
+      drop-shadow(0 0 14px rgba(87,235,162,.035));
+  }
+}
+
 @keyframes orbitLine{to{transform:rotate(360deg)}}
 @keyframes buttonGlint{0%{left:-45%;opacity:0}25%{opacity:1}100%{left:115%;opacity:0}}
 @keyframes logoFloat{
@@ -352,44 +381,96 @@ section{padding:96px 0;position:relative}
 @keyframes serviceShine{0%{transform:translateX(-50%);opacity:0}35%{opacity:.7}100%{transform:translateX(50%);opacity:0}}
 
 
-.footer-clean{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:34px;
-  align-items:end;
+
+
+
+
+
+@media(max-width:680px){
+  
+  
 }
-.footer-brand{
+
+
+.footer{
+  padding:54px 0 34px;
+  border-top:1px solid rgba(255,255,255,.075);
+  background:
+    radial-gradient(ellipse at 72% 0%,rgba(201,164,93,.035),transparent 42%),
+    linear-gradient(180deg,rgba(255,255,255,.012),transparent);
+}
+.footer-refined{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) 1px minmax(0,.9fr);
+  align-items:center;
+  gap:32px;
+}
+.footer-brand-block{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:22px;
+  direction:ltr;
+}
+.footer-brand-copy{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
   text-align:left;
-  direction:ltr;
 }
-.footer-brand h5{
+.footer-brand-copy h5{
   font-family:'Sora',sans-serif;
   color:var(--gold2);
   font-size:1rem;
+  line-height:1.4;
   margin:0;
 }
-.footer-brand p{
-  color:rgba(245,240,230,.42);
-  font-size:.86rem;
-  margin-top:8px;
-  text-align:left;
-}
-.footer-note{
+.footer-brand-copy p{
   color:rgba(245,240,230,.42);
   font-size:.84rem;
-  max-width:460px;
-  text-align:right;
-  align-self:end;
+  line-height:1.5;
+  margin-top:7px;
+  text-align:left;
 }
-@media(max-width:680px){
-  .footer-clean{
+.footer-logo{
+  width:min(145px,38vw);
+  height:auto;
+  margin:0;
+  opacity:.80;
+  filter:drop-shadow(0 0 5px rgba(201,164,93,.035));
+  animation:logoFloatMicro 8.5s ease-in-out infinite reverse;
+  flex:none;
+}
+.footer-divider-line{
+  width:1px;
+  height:72px;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.12),transparent);
+  justify-self:center;
+}
+.footer-legal{
+  color:rgba(245,240,230,.40);
+  font-size:.82rem;
+  line-height:1.8;
+  text-align:left;
+  max-width:380px;
+  justify-self:start;
+}
+@media(max-width:760px){
+  .footer-refined{
     grid-template-columns:1fr;
-    align-items:start;
+    gap:22px;
   }
-  .footer-note{
+  .footer-divider-line{
+    width:100%;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+  }
+  .footer-brand-block{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+  .footer-legal{
+    max-width:none;
     text-align:left;
   }
 }
@@ -594,13 +675,18 @@ section{padding:96px 0;position:relative}
 </main>
 
 <footer class="footer">
-  <div class="container footer-clean">
-    <div class="footer-brand">
-      <h5>ElShamadan Football Season</h5>
-      <p class="en">Monthly Creative &amp; Content Production Proposal</p>
+  <div class="container footer-refined">
+    <div class="footer-brand-block">
+      <div class="footer-brand-copy">
+        <h5>ElShamadan Football Season</h5>
+        <p class="en">Monthly Creative &amp; Content Production Proposal</p>
+      </div>
       <img src="Logo_T%26DMB2.png" alt="T&amp;DMB Agency Logo" class="footer-logo">
     </div>
-    <div class="footer-note en">
+
+    <div class="footer-divider-line" aria-hidden="true"></div>
+
+    <div class="footer-legal en">
       Strategic working offer — final scope is confirmed upon approval and contract signing.
     </div>
   </div>
