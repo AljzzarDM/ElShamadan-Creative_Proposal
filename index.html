@@ -202,7 +202,7 @@ section{padding:96px 0;position:relative}
 .output-title{font-weight:800;font-size:1.35rem;margin-bottom:8px}
 .output-copy{color:var(--muted);font-size:.92rem}
 .weekly-strip{
-  margin:0 24px 24px;padding:20px;border:1px solid rgba(87,235,162,.16);
+  margin:0 24px 24px;padding:20px;border:1px solid rgba(87,235,162,.16);direction:ltr;
   border-radius:18px;background:rgba(87,235,162,.035);
   display:grid;grid-template-columns:repeat(4,1fr);gap:12px
 }
@@ -243,7 +243,18 @@ section{padding:96px 0;position:relative}
 .price-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);margin:24px 0}
 .price-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px}
 .price-list li{color:rgba(245,240,230,.62);font-size:.9rem;position:relative;padding-right:20px}
-.price-list li::before{content:"";position:absolute;right:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(87,235,162,.6)}
+.price-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:auto;
+  top:12px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 10px rgba(87,235,162,.6);
+}
 .exclusions{
   margin-top:34px;padding:24px;border-radius:20px;border:1px solid rgba(215,154,77,.18);
   background:rgba(215,154,77,.035)
@@ -294,24 +305,94 @@ section{padding:96px 0;position:relative}
 .cinematic-btn:hover{color:var(--gold2);border-color:rgba(201,164,93,.35);transform:translateY(-2px);box-shadow:0 16px 38px rgba(0,0,0,.28),0 0 28px rgba(201,164,93,.11)}
 .cinematic-btn:hover::after{animation:buttonGlint 1.2s ease forwards}
 .brand-logo-wrap{margin-top:26px;display:flex;justify-content:center;align-items:center}
-.brand-logo{width:min(280px,72vw);height:auto;opacity:.88;filter:drop-shadow(0 0 16px rgba(201,164,93,.08));animation:logoFloat 6s ease-in-out infinite}
+.brand-logo{
+  width:min(250px,66vw);
+  height:auto;
+  opacity:.84;
+  filter:drop-shadow(0 0 8px rgba(201,164,93,.045));
+  animation:logoFloat 8s ease-in-out infinite;
+}
 .services .card{direction:ltr;text-align:left}
 .services .card p{direction:rtl;text-align:right}
 .services .card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,transparent 30%,rgba(87,235,162,.10) 47%,rgba(234,216,171,.14) 52%,transparent 69%);transform:translateX(-50%);opacity:0}
 .services .card:hover::before{opacity:.75;animation:serviceShine 2.6s ease-in-out}
 .output-card{direction:ltr;text-align:left}
 .output-card .output-title,.output-card .output-copy{direction:rtl;text-align:right}
-.price-list{direction:ltr;text-align:left}
+.price-list{direction:ltr;text-align:left;list-style:none;padding:0;margin:0}
 .price-list li{direction:ltr;text-align:left;padding-left:20px;padding-right:0}
-.price-list li::before{left:0;right:auto}
-.excluded-list{margin-top:12px}
+.excluded-list{margin-top:12px;list-style:none;padding:0}
 .excluded-list li{position:relative;padding-right:20px;color:rgba(245,240,230,.62);font-size:.92rem}
-.excluded-list li::before{content:"";position:absolute;right:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 9px rgba(215,154,77,.5)}
-.footer-logo{width:min(220px,62vw);height:auto;margin-top:22px;opacity:.85;filter:drop-shadow(0 0 14px rgba(201,164,93,.08));animation:logoFloat 7s ease-in-out infinite reverse}
+.excluded-list li::before{
+  content:"";
+  position:absolute;
+  right:0;
+  top:13px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--amber);
+  box-shadow:0 0 9px rgba(215,154,77,.5);
+}
+.footer-logo{
+  width:min(190px,56vw);
+  height:auto;
+  margin-top:18px;
+  opacity:.82;
+  filter:drop-shadow(0 0 7px rgba(201,164,93,.04));
+  animation:logoFloat 9s ease-in-out infinite reverse;
+}
+.weekly-strip{direction:ltr}
+.week{direction:ltr;text-align:center}
 @keyframes orbitLine{to{transform:rotate(360deg)}}
 @keyframes buttonGlint{0%{left:-45%;opacity:0}25%{opacity:1}100%{left:115%;opacity:0}}
-@keyframes logoFloat{0%,100%{transform:translateY(0);opacity:.82}50%{transform:translateY(-4px);opacity:.94}}
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0);opacity:.82}
+  50%{transform:translateY(-2px);opacity:.88}
+}50%{transform:translateY(-4px);opacity:.94}}
 @keyframes serviceShine{0%{transform:translateX(-50%);opacity:0}35%{opacity:.7}100%{transform:translateX(50%);opacity:0}}
+
+
+.footer-clean{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:34px;
+  align-items:end;
+}
+.footer-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  text-align:left;
+  direction:ltr;
+}
+.footer-brand h5{
+  font-family:'Sora',sans-serif;
+  color:var(--gold2);
+  font-size:1rem;
+  margin:0;
+}
+.footer-brand p{
+  color:rgba(245,240,230,.42);
+  font-size:.86rem;
+  margin-top:8px;
+  text-align:left;
+}
+.footer-note{
+  color:rgba(245,240,230,.42);
+  font-size:.84rem;
+  max-width:460px;
+  text-align:right;
+  align-self:end;
+}
+@media(max-width:680px){
+  .footer-clean{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  .footer-note{
+    text-align:left;
+  }
+}
 
 @media print{
   *{animation:none!important;transition:none!important}
@@ -332,12 +413,6 @@ section{padding:96px 0;position:relative}
     <h1 class="en">ElShamadan Football Season</h1>
     <h2>عرض إنتاج وإدارة المحتوى الشهري لحملة الشمعدان الكروية الممتدة من بداية الموسم حتى نهايته.</h2>
     <p>نظام عمل متكامل يجمع بين التوجيه الإبداعي، التخطيط، الكتابة، التصميم، إنتاج الفيديو، والمحتوى التفاعلي؛ بهدف الحفاظ على حضور قوي ومتجدد طوال الموسم.</p>
-    <div class="hero-meta">
-      <span class="pill en">CREATIVE DIRECTION</span>
-      <span class="pill en">CONTENT PRODUCTION</span>
-      <span class="pill en">AI-ASSISTED VIDEO</span>
-      <span class="pill en">MONTHLY RETAINER</span>
-    </div>
     <nav class="hero-nav" aria-label="Page sections">
       <a href="#services" class="cinematic-btn en">Services</a>
       <a href="#production" class="cinematic-btn en">Monthly Output</a>
@@ -485,7 +560,7 @@ section{padding:96px 0;position:relative}
       </div>
 
       <div class="price">
-        <span class="amount">$3,000</span>
+        <span class="amount" data-target="2500">$0</span>
         <span class="per">USD / MONTH</span>
       </div>
 
@@ -519,14 +594,14 @@ section{padding:96px 0;position:relative}
 </main>
 
 <footer class="footer">
-  <div class="container footer-wrap">
-    <div>
+  <div class="container footer-clean">
+    <div class="footer-brand">
       <h5>ElShamadan Football Season</h5>
-      <p>Monthly Creative & Content Production Proposal</p>
-      <img src="Logo_T&DMB2.png" alt="T&DMB Agency Logo" class="footer-logo">
+      <p class="en">Monthly Creative &amp; Content Production Proposal</p>
+      <img src="Logo_T%26DMB2.png" alt="T&amp;DMB Agency Logo" class="footer-logo">
     </div>
-    <div>
-      <p>Strategic working offer — final scope is confirmed upon approval and contract signing.</p>
+    <div class="footer-note en">
+      Strategic working offer — final scope is confirmed upon approval and contract signing.
     </div>
   </div>
 </footer>
@@ -562,6 +637,28 @@ const counterObserver=new IntersectionObserver((entries,obs)=>{
   });
 },{threshold:.55});
 document.querySelectorAll('.output-number').forEach(el=>counterObserver.observe(el));
+
+const priceEl=document.querySelector('.price .amount[data-target]');
+if(priceEl){
+  const priceCounterObserver=new IntersectionObserver((entries,obs)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const el=entry.target,target=parseInt(el.dataset.target,10);
+      let current=0,steps=70,inc=target/steps;
+      const timer=setInterval(()=>{
+        current+=inc;
+        if(current>=target){
+          el.textContent='$'+target.toLocaleString('en-US');
+          clearInterval(timer);
+        }else{
+          el.textContent='$'+Math.floor(current).toLocaleString('en-US');
+        }
+      },24);
+      obs.unobserve(el);
+    });
+  },{threshold:.55});
+  priceCounterObserver.observe(priceEl);
+}
 </script>
 </body>
 </html>
